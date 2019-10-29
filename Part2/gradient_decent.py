@@ -131,8 +131,6 @@ def multivariable_gradient_decent(f, gradient, x, e=SIGMA, lim=LIMIT):
         x = x + np.array([30 * i * (-1) ** i] * len(x))
         grad = gradient(x[0], x[1])
         grad = grad / norm(grad)
-        borders = vector_search(f, 0, grad, x)
-        h = golden_ratio(f=f, a=borders[0], b=borders[1], e=0.00000001, grad=grad, x=x)
 
         while norm(gradient(x[0], x[1])) > e and j < lim:
             j += 1
