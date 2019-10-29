@@ -152,7 +152,6 @@ def multivariable_gradient_decent(f, gradient, x, e=SIGMA, lim=LIMIT):
 tf = open('../output/grad.txt', 'w')
 tf.write(str(multivariable_gradient_decent(f=f, gradient=analytical_gradient, x=[100, 100], e=0.001)) + '\n')
 tf.write(str(multivariable_gradient_decent(f=f, gradient=numerical_gradient, x=[100, 100], e=0.001)))
-tf.close()
 
 count = np.array([0])
 
@@ -195,4 +194,5 @@ data = pd.DataFrame({
     'Значение X2': x2,
 })
 
-print(data.to_string())
+tf.write(data.to_string() + '\n')
+tf.close()
